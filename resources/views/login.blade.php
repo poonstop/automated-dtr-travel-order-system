@@ -171,10 +171,93 @@ input:focus {
     </div>
 
     <!-- Text beside the login form -->
+    <div class="logo-section">
+        <img src="{{ asset('image/dict.png') }}" alt="Logo 1" class="logo">
+        <img src="{{ asset('image/bpilipinas.png') }}" alt="Logo 2" class="logo">
     <center><div class="text-wrapper"> <hr>
         Automated Daily Time Record <br> and Travel Order System
     </div></center>
 </div>
+</div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #ffffff 50%, #002147 100%);
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .content-wrapper {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .login-section {
+        background: #f8f8f8;
+        padding: 20px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .wrapper h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .form .row {
+        margin: 10px 0;
+    }
+
+    .form label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .form .button button {
+        width: 100%;
+        padding: 10px;
+        background: #002147;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .logo-section {
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 150px;
+        margin: 0 10px;
+    }
+
+    .system-title {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+</style>
 
 <!-- <script>
 function checkPassword() {
