@@ -37,7 +37,7 @@ body {
 /* Wrapper for the form */
 .wrapper {
     background: #D9D9D6;
-    padding: 25px;
+    padding: 10px;
     border-radius: 10px;
     width: 325px;
     text-align: center;
@@ -128,6 +128,7 @@ input:focus {
     background: #09214a;
 }
 
+
 /* #password-indicator {
     font-size: 9.2px;
     color: red;
@@ -199,7 +200,7 @@ input:focus {
     .content-wrapper {
         display: flex;
         gap: 50px;
-        align-items: center;
+        align-items: flex-start; /* Align items at the top */
     }
 
     .login-section {
@@ -245,6 +246,7 @@ input:focus {
 
     .logo-section {
         text-align: center;
+        margin-top: -160px; /* Move the logo section upward */
     }
 
     .logo {
