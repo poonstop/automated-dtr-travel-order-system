@@ -21,99 +21,135 @@ html, body {
 /* Apply gradient background to body */
 body {
   background: linear-gradient(to bottom, #ffffff 0%, #ffffff 47%, #10346C 100%); /* Smooth transition */
-    background-size: cover;
-    background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
 } 
-    /* Centering the login form */
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh; /* Ensures full height */
-        width: 100%; /* Ensure full width */
-    }
 
-    .wrapper {
-        background: #D9D9D6;
-        padding: 25px;
-        border-radius: 10px;
-        width: 325px;
-        text-align: center;
-        margin-top: -150px; /* Moves the form slightly upward */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
-        border: 1px solid gray; /* Adds a solid gray border */
-    }
+/* Container for both the login form and the text */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
 
-    h1 {
-        font-size: 22px;
-        color: black;
-        margin-bottom: 10px;
-    }
+/* Wrapper for the form */
+.wrapper {
+    background: #D9D9D6;
+    padding: 25px;
+    border-radius: 10px;
+    width: 325px;
+    text-align: center;
+    margin-top: -150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid gray;
+}
 
-    hr {
-        border: 1px solid gray; /* Adds a solid gray border */
-        width: 100%;
-    }
+/* Wrapper for the text beside the form */
+.text-wrapper {
+    margin-left: 30px;
+    font-size: 30px;
+    font-weight: bold; 
+    color: #000000;
+}
 
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
+/* Other styles (unchanged) */
+h1 {
+    font-size: 22px;
+    color: black;
+    margin-bottom: 10px;
+}
 
-    .row {
-        display: flex; /* Aligns label and input horizontally */
-        align-items: center; /* Vertically centers the label and input */
-        margin-bottom: 15px;
-    }
+hr {
+    border: 1px solid gray;
+    width: 100%;
+}
 
-    .row label {
-        width: 100px; /* Adjust the label width as needed */
-        margin-right: 15px; /* Creates space between label and input */
-        text-align: left;
-        font-size: 14px;
-        color: black;
-        display: flex;
-        align-items: center; /* Aligns the icon with the label text */
-    }
+.form {
+    display: flex;
+    flex-direction: column;
+}
 
-    .row label i {
-        margin-right: 10px; /* Adds space between the icon and the label text */
-    }
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-    input {
-        width: calc(100% - 115px); /* Adjust input width to leave space for label */
-        padding: 10px 10px 10px 35px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-    }
+.row label {
+    width: 100px;
+    margin-right: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
 
-    input:focus {
-        outline: none;
-        border-color: #555;
-    }
+.row label i {
+    margin-right: 10px;
+}
 
-    .row.button button {
-        width: 100%;
-        padding: 10px;
-        background: #0c2e5e;
-        border: none;
-        color: white;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+input {
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
 
-    .row.button button:hover {
-        background: #09214a;
-    }
+input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+#uname, #pword {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.row.button {
+    display: flex;
+    justify-content: center;
+}
+
+.row.button button {
+    width: 280px;
+    padding: 10px;
+    background: #0c2e5e;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row.button button:hover {
+    background: #09214a;
+}
+
+/* #password-indicator {
+    font-size: 9.2px;
+    color: red;
+    text-align: left;
+    margin-top: -14px;
+    margin-left: -1px;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+} */
 </style>
 
 <div class="container">
     <div class="wrapper">
         <h1>Administrator</h1>
-          <hr>
-        <form action="#" onsubmit="return login()"> 
+        <hr>
+        <form action="#" onsubmit="return login()">
             <div class="form">
                 <div class="row">
                     <label for="uname"><i class="fas fa-user"></i> Username</label>
@@ -121,14 +157,42 @@ body {
                 </div>
                 <div class="row">
                     <label for="pword"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="pword" placeholder="Enter Password" required>
-                </div> <br>
+                    <input type="password" id="pword" placeholder="Enter Password" required minlength="8" maxlength="8" onkeyup="checkPassword()">
+                </div>
+                <!-- <p id="password-indicator" class="invalid">
+                    * Must contain uppercase, lowercase, number, and special character
+                </p> -->
+                <br>
                 <div class="row button">
-                    <button type="submit">Login</button> 
+                    <button type="submit">Login</button>
                 </div>
             </div>
         </form>
     </div>
+
+    <!-- Text beside the login form -->
+    <center><div class="text-wrapper"> <hr>
+        Automated Daily Time Record <br> and Travel Order System
+    </div></center>
 </div>
+
+<!-- <script>
+function checkPassword() {
+    const password = document.getElementById("pword").value;
+    const indicator = document.getElementById("password-indicator");
+
+    if (/[A-Z]/.test(password) && 
+        /[a-z]/.test(password) && 
+        /[0-9]/.test(password) && 
+        /[!@#$%^&*(),.?":{}|<>~_\-=+]/.test(password)) {
+        
+        indicator.textContent = "Password is strong!";
+        indicator.style.color = "green"; 
+    } else {
+        indicator.textContent = "* Must contain uppercase, lowercase, number, and special character";
+        indicator.style.color = "red";
+    }
+}
+</script> -->
 
 @endsection
