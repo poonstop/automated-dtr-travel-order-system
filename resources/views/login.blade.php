@@ -153,16 +153,20 @@ input:focus {
         <form action="#" onsubmit="return login()">
             <div class="form">
                 <div class="row">
-                    <label for="uname"><i class="fas fa-user"></i> Username</label>
+                    <label for="uname"><i class="fas fa-user"></i>Username</label>
                     <input type="text" id="uname" placeholder="Enter Username" required>
                 </div>
                 <div class="row">
-                    <label for="pword"><i class="fas fa-lock"></i> Password</label>
+                    <label for="pword"><i class="fas fa-lock"></i>Password</label>
                     <input type="password" id="pword" placeholder="Enter Password" required minlength="8" maxlength="8" onkeyup="checkPassword()">
                 </div>
                 <!-- <p id="password-indicator" class="invalid">
                     * Must contain uppercase, lowercase, number, and special character
                 </p> -->
+        
+                <!--<p id="password-indicator" class="invalid">
+                    * Must contain uppercase, lowercase, number, and special character
+                </p>-->
                 <br>
                 <div class="row button">
                     <button type="submit">Login</button>
@@ -170,6 +174,9 @@ input:focus {
             </div>
         </form>
     </div>
+
+    
+     
 
     <!-- Text beside the login form -->
     <div class="logo-section">
@@ -205,32 +212,40 @@ input:focus {
 
     .login-section {
         background: #f8f8f8;
-        padding: 20px 40px;
+        padding: 20px 40px
         border-radius: 12px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
-
+.wrapper {
+        background: rgb(217, 217, 214);
+        size: 50px;
+        padding: 24px;
+        padding-bottom: 5px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
     .wrapper h1 {
-        font-size: 24px;
+        font-size: 26px;
         margin-bottom: 10px;
+        font-weight: bolder;
     }
 
     .form .row {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     .form label {
-        display: block;
         font-size: 14px;
         margin-bottom: 5px;
     }
 
     .form input {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
+        padding: 8px;
+        border: 2px solid #ccc;
+        border-radius: 12px;
         font-size: 14px;
+        border-color: #000000;
     }
 
     .form .button button {
@@ -239,9 +254,10 @@ input:focus {
         background: #002147;
         color: #fff;
         border: none;
-        border-radius: 6px;
+        border-radius: 12px;
         font-size: 14px;
         cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .logo-section {
